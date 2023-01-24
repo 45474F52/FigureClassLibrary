@@ -49,5 +49,13 @@ namespace FiguresTests
                 FigureInfo<Circle> figureInfo = new(parameters: new double[3] { 6.2, 10.01, 4.8 });
             });
         }
+
+        [TestMethod]
+        public void TestTriangleIsRightAngled()
+        {
+            Triangle triangle = new();
+            triangle.Initialize(parameters: new double[3] { 6.0, 10.0, 8.0 });
+            Assert.IsTrue(triangle.IsRightAngled());
+        }
     }
 }

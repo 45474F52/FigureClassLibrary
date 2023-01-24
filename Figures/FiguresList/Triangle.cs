@@ -59,8 +59,7 @@
 
             if (Sides.Where(s => s == hypotenuse).Count() == 1)
             {
-                double[] cathets = new double[2];
-                cathets.CopyTo(Sides.Where(s => s != hypotenuse).ToArray(), 0);
+                double[] cathets = Sides.Where(s => s != hypotenuse).ToArray();
 
                 return (hypotenuse * hypotenuse) == cathets[0] * cathets[0] + cathets[1] * cathets[1];
             }
